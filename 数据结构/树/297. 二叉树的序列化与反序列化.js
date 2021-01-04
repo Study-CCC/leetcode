@@ -13,7 +13,7 @@
  * @return {string}
  */
 var serialize = function(root) {
-  if(!root) return []
+if(!root) return []
 let seriaArr = []
 let dfs = (root)=>{
   if(!root) return seriaArr.push(null)
@@ -32,7 +32,6 @@ return seriaArr
 * @return {TreeNode}
 */
 var deserialize = function(data) {
-console.log(data)
 if(data.length===0) return null
 let root = new TreeNode()
 let dfs = (root)=>{        
