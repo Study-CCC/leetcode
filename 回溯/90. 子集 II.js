@@ -2,14 +2,14 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-var subsets = function(nums) {
+var subsetsWithDup = function(nums) {
   let res = []
   let dfs = (start,arr)=>{
       res.push(arr.slice())
       for(let i=start;i<nums.length;i++){
-          if(arr[arr.length-1]>=nums[i]) continue;
+          if(i>start&&nums[i]===nums[i-1]) continue;
           arr.push(nums[i])
-          dfs(start+1,arr)
+          dfs(i+1,arr)
           arr.pop()
       }
   }
